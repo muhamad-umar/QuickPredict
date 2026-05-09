@@ -3,7 +3,7 @@ async function loadDataset() {
     c.innerHTML = `
     <div class="page-container">
       <header class="section-header"><h2>Dataset Explorer</h2>
-        <p>Browse the raw orders. <b>Order_ID</b> is shown for display only — never used in analysis or modeling.</p></header>
+        <p>Browse the original delivery records collected for analytical and predictive insights</p></header>
 
       <div id="ds-loading"></div>
       <div id="ds-content" style="display:none;">
