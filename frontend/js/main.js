@@ -1,4 +1,6 @@
-const API = 'http://localhost:8000/api';
+const API = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+    ? 'http://localhost:8000/api' 
+    : '/api';
 
 Chart.defaults.color = '#8a94a6';
 Chart.defaults.font.family = "'Inter', sans-serif";
