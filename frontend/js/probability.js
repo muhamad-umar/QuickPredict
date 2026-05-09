@@ -39,9 +39,7 @@ async function loadProbability() {
 
 
     const opt = { responsive:true, maintainAspectRatio:false,
-        plugins:{legend:{display:true,labels:{color:darkTheme.color}}},
-        scales:{ x:{type:'linear',ticks:{color:darkTheme.ticks.color},grid:{display:false}},
-                 y:{ticks:{color:darkTheme.ticks.color},grid:{color:'rgba(255,255,255,0.03)'}} }};
+        plugins:{legend:{display:true,labels:{color:darkTheme.color}}} };
 
     // Normal PDF with shaded
     createChart('cp-normal', {
@@ -55,7 +53,10 @@ async function loadProbability() {
           { label:`Fast (≤${data.normal.fast_threshold})`,
             data:data.normal.shade_fast_x.map((x,i)=>({x,y:data.normal.shade_fast_y[i]})),
             borderColor:'#2ee6a4', backgroundColor:'rgba(46,230,164,0.35)', fill:'origin', pointRadius:0, parsing:false }
-        ]}, options: opt
+        ]}, options: { ...opt, scales: {
+            x:{type:'linear', title:{display:true, text:'Delivery Time (min)', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color}, grid:{display:false}},
+            y:{title:{display:true, text:'Probability Density', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color}, grid:{color:'rgba(255,255,255,0.03)'}}
+        }}
     });
 
     // Binomial
@@ -65,8 +66,9 @@ async function loadProbability() {
         type:'bar',
         data:{ labels:data.binomial.k, datasets:[{ label:'PMF',
           data:data.binomial.pmf, backgroundColor:'rgba(245,196,81,0.55)', borderRadius:2 }] },
-        options:{ ...opt, scales:{ x:{ticks:{color:darkTheme.ticks.color},grid:{display:false}},
-            y:{ticks:{color:darkTheme.ticks.color},grid:{color:'rgba(255,255,255,0.03)'}} } }
+        options:{ ...opt, scales:{ 
+            x:{title:{display:true, text:'Number of Late Deliveries (k)', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color},grid:{display:false}},
+            y:{title:{display:true, text:'Probability P(X=k)', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color},grid:{color:'rgba(255,255,255,0.03)'}} } }
     });
 
     // Z
@@ -76,8 +78,8 @@ async function loadProbability() {
                datasets:[{ data:data.zscore.values, backgroundColor:'rgba(24,226,255,0.4)',
                  borderRadius:1, barPercentage:1, categoryPercentage:1 }] },
         options:{ ...opt, plugins:{legend:{display:false}}, scales:{
-            x:{ticks:{color:darkTheme.ticks.color},grid:{display:false}},
-            y:{ticks:{color:darkTheme.ticks.color},grid:{color:'rgba(255,255,255,0.03)'}} } }
+            x:{title:{display:true, text:'Z-Score', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color},grid:{display:false}},
+            y:{title:{display:true, text:'Frequency', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color},grid:{color:'rgba(255,255,255,0.03)'}} } }
     });
 
     // CDF
@@ -88,6 +90,9 @@ async function loadProbability() {
             borderColor:'#18e2ff', borderWidth:2, pointRadius:0, parsing:false },
           { label:'Theoretical (Normal)', data:data.cdf.theoretical_x.map((x,i)=>({x,y:data.cdf.theoretical_y[i]})),
             borderColor:'#f5c451', borderWidth:2, borderDash:[6,4], pointRadius:0, parsing:false }
-        ]}, options: opt
+        ]}, options: { ...opt, scales: {
+            x:{type:'linear', title:{display:true, text:'Delivery Time (min)', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color}, grid:{display:false}},
+            y:{title:{display:true, text:'Cumulative Probability', color:'#8a94a6'}, ticks:{color:darkTheme.ticks.color}, grid:{color:'rgba(255,255,255,0.03)'}}
+        }}
     });
 }

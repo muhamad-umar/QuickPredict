@@ -31,8 +31,9 @@ async function loadRegression() {
           </table>
         </div>
         
-        <div class="card" style="margin-bottom:32px; padding:24px; text-align:center; font-size:1.5rem; font-weight:800; color:var(--primary);">
-          r = <span id="pearson-r"></span>
+        <div class="card kpi-card" style="margin-bottom:32px; border-left-color:var(--primary);">
+          <span class="label">Pearson Correlation Coefficient (r)</span>
+          <span class="value" id="pearson-r"></span>
         </div>
 
         <div class="chart-container" style="margin-bottom:32px;">
@@ -168,8 +169,8 @@ async function loadRegression() {
       indexAxis: 'y', responsive: true, maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: {
-        x: { ticks: { color: darkTheme.ticks.color }, grid: { color: 'rgba(255,255,255,0.03)' } },
-        y: { ticks: { color: darkTheme.ticks.color, font: { size: 10 } }, grid: { display: false } }
+        x: { title: { display: true, text: 'Coefficient Value', color: '#8a94a6' }, ticks: { color: darkTheme.ticks.color }, grid: { color: 'rgba(255,255,255,0.03)' } },
+        y: { title: { display: true, text: 'Features', color: '#8a94a6' }, ticks: { color: darkTheme.ticks.color, font: { size: 10 } }, grid: { display: false } }
       }
     }
   });
@@ -186,8 +187,8 @@ async function loadRegression() {
     options: {
       responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
       scales: {
-        x: { ticks: { color: darkTheme.ticks.color }, grid: { display: false } },
-        y: { ticks: { color: darkTheme.ticks.color }, grid: { color: 'rgba(255,255,255,0.03)' } }
+        x: { title: { display: true, text: 'Residual (Actual - Predicted)', color: '#8a94a6' }, ticks: { color: darkTheme.ticks.color }, grid: { display: false } },
+        y: { title: { display: true, text: 'Frequency', color: '#8a94a6' }, ticks: { color: darkTheme.ticks.color }, grid: { color: 'rgba(255,255,255,0.03)' } }
       }
     }
   });

@@ -1,6 +1,6 @@
 # Food Delivery Time Prediction System
 
-A university-level **Probability & Statistics + Machine Learning** project that analyzes food delivery operations and predicts delivery time using multivariate linear regression.
+A university-level **Probability & Statistics + Machine Learning** project that analyzes food delivery operations and predicts delivery time using regression modeling.
 
 ## Dataset Variables
 
@@ -24,7 +24,7 @@ A 1000-row synthetic dataset is generated automatically with realistic relations
 2. **Graphical Analysis** — Histogram + Normal fit, Boxplot by Traffic, scatter plots, correlation heatmap.
 3. **Descriptive Statistics** — Mean / median / mode / std / variance / CVar / skew / kurt, 95% CIs, group means, percentiles.
 4. **Probability Distributions** — Normal PDF (with late/fast shading), Binomial (n=20, p=P(late)), Poisson (λ = mean orders per weather), Z-scores, ECDF vs theoretical, conditional probabilities, Shapiro-Wilk test.
-5. **Regression Modeling** — Multivariate linear regression with one-hot categoricals; R², MAE, RMSE; actual-vs-predicted, coefficient impact, residuals, equation.
+5. **Regression Modeling** — Regression modeling with one-hot categoricals; R², MAE, RMSE; actual-vs-predicted, coefficient impact, residuals, equation.
 6. **ETA Predictor** — Interactive form posting to `/api/predict` for live predictions with delivery tier (EXPRESS / ON TIME / MODERATE / DELAYED).
 7. **Dataset Explorer** — Browse raw orders (Order_ID for display only).
 

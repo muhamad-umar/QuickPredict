@@ -26,7 +26,7 @@ async function loadPredict() {
         <div class="card" style="margin-top:24px;border-left:4px solid var(--primary);padding:32px;">
           <h4 class="section-tag">How it works</h4>
           <p style="color:var(--text-sub);font-size:0.9rem;line-height:1.7;">
-            The backend builds a multivariate linear regression on the full dataset using
+            The backend builds a regression modeling on the full dataset using
             numeric features (Distance, Preparation Time, Courier Experience) and one-hot encoded
             categorical features (Weather, Traffic Level, Time of Day, Vehicle Type).
             <b>Order_ID is excluded</b> from training and prediction — it exists only as a display label.</p>
