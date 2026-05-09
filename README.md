@@ -20,19 +20,19 @@ A 1000-row synthetic dataset is generated automatically with realistic relations
 
 ## Pages
 
-1. **Dashboard Overview** — KPIs, top deliveries, weather/traffic/vehicle mix.
-2. **Graphical Analysis** — Histogram + Normal fit, Boxplot by Traffic, scatter plots, correlation heatmap.
-3. **Descriptive Statistics** — Mean / median / mode / std / variance / CVar / skew / kurt, 95% CIs, group means, percentiles.
-4. **Probability Distributions** — Normal PDF (with late/fast shading), Binomial (n=20, p=P(late)), Poisson (λ = mean orders per weather), Z-scores, ECDF vs theoretical, conditional probabilities, Shapiro-Wilk test.
-5. **Regression Modeling** — Regression modeling with one-hot categoricals; R², MAE, RMSE; actual-vs-predicted, coefficient impact, residuals, equation.
-6. **ETA Predictor** — Interactive form posting to `/api/predict` for live predictions with delivery tier (EXPRESS / ON TIME / MODERATE / DELAYED).
-7. **Dataset Explorer** — Browse raw orders (Order_ID for display only).
+1. **Dashboard Overview** — Essential KPIs, top recent deliveries, and operational mix (weather/traffic/vehicle).
+2. **Graphical Analysis** — Histogram with Normal fit, Boxplots by Traffic, scatter plots, and correlation heatmap.
+3. **Descriptive Statistics** — Central tendency (Mean/Median/Mode), Dispersion (Std/Var/CVar), Skewness/Kurtosis, 95% Confidence Intervals, and Percentiles.
+4. **Probability Distributions** — Visualized Normal PDF (with late/fast shading), Binomial (n=20, p=P(late)), and Z-score distributions. Includes axis-labeled interactive charts.
+5. **Regression Modeling** — Regression modeling with Pearson Correlation (r) KPI cards, R², MAE, RMSE, actual-vs-predicted analysis, and coefficient impact visuals.
+6. **ETA Predictor** — Interactive form that uses the trained model to return expected delivery time and tier (EXPRESS / ON TIME / MODERATE / DELAYED).
+7. **Dataset Explorer** — Browse original delivery records collected for analytical and predictive insights.
 
 ## Tech Stack
 
 - **Backend**: Python · FastAPI · pandas · NumPy · SciPy · scikit-learn
 - **Frontend**: Vanilla HTML / CSS / JavaScript · Chart.js
-- **Design**: Dark dashboard UI with cyan/gold accents
+- **Design**: Modern Light dashboard UI with blue/orange/green/purple accents and subtle background imagery.
 
 ## How to Run
 
@@ -83,10 +83,10 @@ FoodDelivery_Project/
 ## Statistical Highlights
 
 - **Order_ID is dropped** from the working DataFrame before any computation: `df = df_full.drop("Order_ID", axis=1)`.
-- Continuous distribution: Normal fit on `Delivery_Time_min` with shaded regions for *late* (≥45 min) and *fast* (≤25 min).
-- Discrete distributions: Binomial models the number of late deliveries out of 20; Poisson models orders per weather category.
-- Conditional probabilities: P(Late | Rainy), P(Late | High Traffic), P(Fast | Bike).
-- Regression typically achieves **R² ≈ 0.85–0.92** on the synthetic data.
+- **Pearson Correlation**: Real-time calculation of $r$ with visual scatter plot validation.
+- **Normal Distribution**: Dynamic PDF modeling on `Delivery_Time_min` with shaded regions for operational outliers.
+- **Binomial Distribution**: Models the frequency of "late" deliveries (X ≥ 45 min) in sample batches.
+- **Regression Accuracy**: Typically achieves **R² ≈ 0.85–0.92** on the synthetic data.
 
 ---
 *University Probability & Statistics + ML project.*
