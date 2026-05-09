@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Food Delivery Time Prediction System — probability, statistics & ML for delivery operations.">
+    <meta name="theme-color" content="#06090f">
+    <title>Food Delivery Time Prediction · Analytics & ML</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Quick<span>Predict</span></h2>
+                <div class="player-count-badge">Predict, Analyze, Deliver.</div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-link active" data-page="dashboard">Dashboard Overview</button>
+                <button class="nav-link" data-page="graphical">Graphical Analysis</button>
+                <button class="nav-link" data-page="stats">Descriptive Statistics</button>
+                <button class="nav-link" data-page="probability">Probability Distributions</button>
+                <button class="nav-link" data-page="regression">Regression Modeling</button>
+                <button class="nav-link" data-page="predict">Delivery Time Predictor</button>
+                <button class="nav-link" data-page="dataset">Dataset Explorer</button>
+            </nav>
+        </aside>
+
+        <main class="main-area">
+            <div class="main-header-row">
+                <div class="header-left">
+                    <h1 id="current-page-label">DASHBOARD</h1>
+                </div>
+                <span id="syllabus-badge" class="syllabus-badge">PROJECT OVERVIEW</span>
+            </div>
+
+            <div id="page-content"></div>
+            <div id="footer-nav-container"></div>
+        </main>
+    </div>
+
+    <script src="js/dashboard.js?v=15"></script>
+    <script src="js/graphical.js?v=15"></script>
+    <script src="js/stats.js?v=15"></script>
+    <script src="js/probability.js?v=15"></script>
+    <script src="js/regression.js?v=15"></script>
+    <script src="js/predict.js?v=15"></script>
+    <script src="js/dataset.js?v=15"></script>
+    <script src="js/main.js?v=15"></script>
+</body>
+
+</html>
